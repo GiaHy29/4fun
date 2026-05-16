@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mÁy dỊcH tEeNc0dE - lEvEl cUốI</title>
+    <title>mÁy dỊcH tEeNc0dE</title>
     <style>
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -83,7 +83,7 @@
         <button onclick="convertToHardcore()">hỦy dIệT cHữ vIếT !!!</button>
         <br>
 
-        <textarea id="outputText" placeholder="kẾt qUả sẼ hIệN r4 Ở đÂy..." readonly></textarea>
+        <textarea id="outputText" placeholder="kẾt qUả mÙ mẮt sẼ hIệN r4 Ở đÂy..." readonly></textarea>
     </div>
 
     <script>
@@ -112,7 +112,6 @@
                 text = text.replace(new RegExp('\\b' + k + '\\b', 'gi'), v);
             }
 
-            // Ép chữ thành số và ký tự
             let chars = text.split('');
             for(let i = 0; i < chars.length; i++) {
                 let c = chars[i];
@@ -132,17 +131,14 @@
             }
             text = chars.join('');
 
-            // 3. Random viết hoa viết thường
             let result = "";
             for (let i = 0; i < text.length; i++) {
                 result += (Math.random() > 0.4) ? text[i].toUpperCase() : text[i].toLowerCase();
             }
 
-            // 4. Chèn biểu tượng cảm xúc
             const kaomoji = [" =]]", " =))", " >_<", " ~^^~", " *o*", " !!1!1!!", " :P", " \",\"", " =;", " T_T"];
             if (result.trim().length > 0) {
                  result += kaomoji[Math.floor(Math.random() * kaomoji.length)];
-                 // Thi thoảng chèn thêm vào giữa câu
                  if (Math.random() > 0.5) {
                     result = kaomoji[Math.floor(Math.random() * kaomoji.length)] + " " + result;
                  }
